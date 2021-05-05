@@ -26,3 +26,10 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
     data.smokes = +data.smokes;
     // console.log(data);
   });
+  const xScale = d3.scaleLinear()
+  .domain(d3.extent(CensusData, d => d.age))
+  .range([0, width])
+  .nice();
+
+
+
