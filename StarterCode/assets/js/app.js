@@ -42,3 +42,19 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
   chartGroup.append("g").attr("transform", `translate(0, ${height})`).call(xAxis);
   chartGroup.append("g").call(yAxis);
 
+  chartGroup.selectAll("circle")
+  .data(CensusData)
+  .enter()
+  .append("circle")
+  .attr("cx", d=>xScale(d.age))
+  .attr("cy", d=>yScale(d.smokes))
+  .attr("r", "10")
+  .attr("stroke-width", "1")
+  .classed("stateCircle", true)
+  .attr("opacity", 0.75);
+
+
+
+
+
+  
