@@ -7,3 +7,9 @@ var margin = {
   bottom: 60,
   left: 50
 };
+
+var width = svgWidth - margin.left - margin.right;
+var height = svgHeight - margin.top - margin.bottom;
+
+
+
