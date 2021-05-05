@@ -30,6 +30,10 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
   .domain(d3.extent(CensusData, d => d.age))
   .range([0, width])
   .nice();
-
+  
+  const yScale = d3.scaleLinear()
+  .domain([6,d3.max(CensusData, d => d.smokes)])
+  .range([height, 0])
+  .nice();
 
 
