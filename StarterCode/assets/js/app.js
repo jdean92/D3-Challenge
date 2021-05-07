@@ -69,6 +69,25 @@ d3.csv("assets/data/data.csv").then(function(CensusData) {
   .style("font-weight", "bold")
   .attr("alignment-baseline", "central");
 
+  chartGroup.append("text")
+  .attr("transform", `translate(${width / 2}, ${height + margin.top + 13})`)
+  .attr("text-anchor", "middle")
+  .attr("font-size", "16px")
+  .attr("fill", "black")
+  .style("font-weight", "bold")
+  .text("Median Age");
 
+  chartGroup.append("text")
+  .attr("y", 0 - ((margin.left / 2) + 2))
+  .attr("x", 0 - (height / 2))
+  .attr("text-anchor", "middle")
+  .attr("font-size", "16px")
+  .attr("fill", "black")
+  .style("font-weight", "bold")
+  .attr("transform", "rotate(-90)")
+  .text("Smokers (%)");
+}).catch(function(error) {
+console.log(error);
+});
 
   
